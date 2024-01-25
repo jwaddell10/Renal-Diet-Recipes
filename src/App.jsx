@@ -1,11 +1,11 @@
-import './App.css'
+import Title from './components/Title.jsx'
 //homepage, title page
 //input field, filters
 //body with cards
 
 function App() {
   return (
-    <h1>sample text</h1>
+    <Title />
   )
 }
 
