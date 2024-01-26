@@ -1,5 +1,5 @@
-import Title from './components/Title.jsx'
-import InputField from './components/InputField.jsx'
+import Title from "./components/Title.jsx";
+import InputField from "./components/InputField.jsx";
 //homepage, title page
 //input field, filters
 //body with cards
@@ -10,7 +10,7 @@ function App() {
       <Title />
       <InputField />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
