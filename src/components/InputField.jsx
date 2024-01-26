@@ -1,4 +1,5 @@
 import useFetchAPI from "./FetchAPI";
+import RecipeFilters from "./RecipeFilters";
 
 function InputField() {
   function search(formData) {
@@ -6,10 +7,14 @@ function InputField() {
     alert(`You searched for ${query}`);
   }
   return (
-    <form onSubmit={search}>
+    <div>   
+        <form onSubmit={search}>
       <input name="recipe" type="text" label="text" defaultValue="Search..." />
       <button type="submit">Search</button>
     </form>
+    <RecipeFilters />
+    </div>
+    
   );
 }
 
