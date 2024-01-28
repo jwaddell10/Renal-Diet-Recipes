@@ -1,43 +1,38 @@
-import { useState } from "react";
-import useFetchAPI from "./FetchAPI";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-import RecipeFilters from "./RecipeFilters";
-
-//need to somehow take the value from this search, and hand it to the fetchapi
-
-//maybe pass this state up?
-
-//remove state, pass it to parent
+import useFetchAPI from "./FetchAPI.jsx";
 
 const InputField = ({ formData, setFormData }) => {
   const { items, error, loading } = useFetchAPI({ formData });
+  const [input, setInput] = useState('');
   console.log(items, "this is items");
+  
+  const handleChange = (e) => {
+    setInput(e.target.value)
+  };
 
-  //maybe can use report validity to filter certain items?
-  const HandleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData.title, "this is formdata");
+    // setFormData((prevData) => ({ ...prevData, title: e.target.value }));
     if (formData.title === "star fruit") {
       console.log("error this is starfruit");
       return;
     }
-    // Search(e.target.value)
   };
+
   return (
     <div>
-      <form onSubmit={HandleSubmit}>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title</label>
         <input
-          onChange={(e) =>
-            setFormData((prevData) => ({ ...prevData, title: e.target.value }))
-          }
-          value={formData.title}
+          onChange={handleChange}
+          value={input}
           type="text"
           name="title"
           id="title"
         />
+        <button type="submit">Submit</button>
       </form>
-      <RecipeFilters />
     </div>
   );
 };
