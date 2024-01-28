@@ -4,7 +4,10 @@ const APP_ID = "07219864";
 // eslint-disable-next-line camelcase
 const APP_key = "f83320eb349bdebfd72d4be76b29e58f";
 
-const useFetchAPI = ({ searchQuery }) => {
+const useFetchAPI = ({ formData }) => {
+
+  const { searchQuery } = formData
+  console.log(searchQuery, 'this is searchquery')
   const [items, setItems] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
