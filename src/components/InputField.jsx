@@ -3,16 +3,15 @@ import PropTypes from "prop-types";
 import useFetchAPI from "./FetchAPI.jsx";
 
 const InputField = ({ formData, setFormData }) => {
-  const { items, error, loading } = useFetchAPI({ formData });
-  const [input, setInput] = useState('');
-  console.log(items, "this is items");
-  
+  const { getData } = useFetchAPI({ formData });
   const handleChange = (e) => {
-    setInput(e.target.value)
+    setFormData((prevData) => ({ ...prevData, title: e.target.value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    getData();
+    console.log(formData.title, 'this is formdata')
     // setFormData((prevData) => ({ ...prevData, title: e.target.value }));
     if (formData.title === "star fruit") {
       console.log("error this is starfruit");
@@ -26,7 +25,7 @@ const InputField = ({ formData, setFormData }) => {
         <label htmlFor="title">Title</label>
         <input
           onChange={handleChange}
-          value={input}
+          value={formData.title}
           type="text"
           name="title"
           id="title"
