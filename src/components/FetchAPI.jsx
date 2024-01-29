@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState } from "react";
 
 const APP_ID = "07219864";
 const APP_key = "f83320eb349bdebfd72d4be76b29e58f";
@@ -10,9 +10,7 @@ const useFetchAPI = ({ formData }) => {
 
   const getData = async () => {
     try {
-      console.log(formData.title, 'this is formdata api')
       const searchQuery = formData.title;
-      console.log(searchQuery, 'this is searchquery')
       const response = await fetch(
         `https://api.edamam.com/api/recipes/v2?type=public&q=${searchQuery}&app_id=${APP_ID}&app_key=${APP_key}`,
         {

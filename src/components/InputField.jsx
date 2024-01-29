@@ -1,8 +1,7 @@
-import React, { useState } from "react";
 import PropTypes from "prop-types";
 import useFetchAPI from "./FetchAPI.jsx";
 
-const InputField = ({ formData, setFormData }) => {
+const InputField = ({ formData, setFormData, setItemsFromInputField }) => {
   const { getData, items } = useFetchAPI({ formData });
   const handleChange = (e) => {
     setFormData((prevData) => ({ ...prevData, title: e.target.value }));
@@ -15,7 +14,7 @@ const InputField = ({ formData, setFormData }) => {
       return;
     }
     getData();
-    console.log(items, "this is items");
+    setItemsFromInputField(items)
     // setFormData((prevData) => ({ ...prevData, title: e.target.value }));
   };
 
@@ -39,6 +38,7 @@ const InputField = ({ formData, setFormData }) => {
 InputField.propTypes = {
   formData: PropTypes.object,
   setFormData: PropTypes.func,
+  setItemsFromInputField: PropTypes.func,
 };
 
 export default InputField;
