@@ -1,13 +1,28 @@
-import InputField from "./InputField.jsx";
-import useFetchAPI from "./FetchAPI.jsx";
+import PropTypes from "prop-types";
+function Body({ itemsFromInputField }) {
+    let recipes = null;
+  
+    if (itemsFromInputField) {
+      recipes = itemsFromInputField.hits;
+      console.log(recipes, 'this is recipes');
+    }
+  
+    return (
+      itemsFromInputField && (
+        <ul>
+          {recipes && recipes.map((item) => (
+            <li key={item.recipe.uri}>
+              {item.recipe.label}
+              <img src={item.recipe.image} />
+            </li>
+          ))}
+        </ul>
+      )
+    );
+  }
 
-
-function Body({ formData, itemsFromInputField }) {
-    // const { getData, items } = useFetchAPI({ formData });
-
-    console.log(itemsFromInputField, 'this is itemsfrominputfield in body')
-//   const { items } = InputField();
-//   console.log(items, 'this is formdata in body')
+Body.propTypes = {
+    itemsFromInputField: PropTypes.object,
 }
 
 export default Body;
