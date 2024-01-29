@@ -3,20 +3,20 @@ import PropTypes from "prop-types";
 import useFetchAPI from "./FetchAPI.jsx";
 
 const InputField = ({ formData, setFormData }) => {
-  const { getData } = useFetchAPI({ formData });
+  const { getData, items } = useFetchAPI({ formData });
   const handleChange = (e) => {
     setFormData((prevData) => ({ ...prevData, title: e.target.value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    getData();
-    console.log(formData.title, 'this is formdata')
-    // setFormData((prevData) => ({ ...prevData, title: e.target.value }));
-    if (formData.title === "star fruit") {
+    if (formData.title.toLowerCase() === "star fruit") {
       console.log("error this is starfruit");
       return;
     }
+    getData();
+    console.log(items, "this is items");
+    // setFormData((prevData) => ({ ...prevData, title: e.target.value }));
   };
 
   return (
