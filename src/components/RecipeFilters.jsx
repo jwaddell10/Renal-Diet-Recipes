@@ -1,32 +1,28 @@
-import { useState } from "react";
 import PropTypes from "prop-types";
 
 function RecipeFilters({ setMealFilters, setTimeFilters }) {
-
   const handleMealFilterChange = (e) => {
-    setMealFilters((prevData) => ({ ...prevData, mealFilters: e.target.value }))
-  }
+    setMealFilters((prevData) => ({
+      ...prevData,
+      mealFilters: e.target.value,
+    }));
+  };
 
   const handleTimeFilterChange = (e) => {
-    setTimeFilters((prevData) => ({ ...prevData, timeFilters: e.target.value}))
-  }
+    setTimeFilters((prevData) => ({
+      ...prevData,
+      timeFilters: e.target.value,
+    }));
+  };
   return (
     <div>
-      <select
-        onChange={handleMealFilterChange}
-        name="mealtime"
-        id="mealtime"
-      >
+      <select onChange={handleMealFilterChange} name="mealtime" id="mealtime">
         <option value="breakfast">Breakfast</option>
         <option value="lunch">Lunch</option>
         <option value="dinner">Dinner</option>
         <option value="snack">Snack</option>
       </select>
-      <select
-        onChange={handleTimeFilterChange}
-        name="cooktime"
-        id="cooktime"
-      >
+      <select onChange={handleTimeFilterChange} name="cooktime" id="cooktime">
         <option value="1-10">0-10 Minutes</option>
         <option value="11-20">10-20 Minutes</option>
         <option value="21-40">20+ Minutes</option>
@@ -38,6 +34,6 @@ function RecipeFilters({ setMealFilters, setTimeFilters }) {
 RecipeFilters.propTypes = {
   setMealFilters: PropTypes.func,
   setTimeFilters: PropTypes.func,
-}
+};
 
 export default RecipeFilters;

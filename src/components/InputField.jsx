@@ -1,8 +1,19 @@
 import PropTypes from "prop-types";
 import useFetchAPI from "./FetchAPI.jsx";
 
-const InputField = ({ formData, setFormData, setItemsFromInputField, mealFilters, timeFilters }) => {
-  const { getData, items } = useFetchAPI({ formData, mealFilters, timeFilters });
+const InputField = ({
+  formData,
+  setFormData,
+  setItemsFromInputField,
+  mealFilters,
+  timeFilters,
+}) => {
+  
+  const { getData, items } = useFetchAPI({
+    formData,
+    mealFilters,
+    timeFilters,
+  });
   const handleChange = (e) => {
     setFormData((prevData) => ({ ...prevData, title: e.target.value }));
   };
@@ -14,7 +25,7 @@ const InputField = ({ formData, setFormData, setItemsFromInputField, mealFilters
       return;
     }
     getData();
-    setItemsFromInputField(items)
+    setItemsFromInputField(items);
     // setFormData((prevData) => ({ ...prevData, title: e.target.value }));
   };
 

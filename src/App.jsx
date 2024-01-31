@@ -12,10 +12,13 @@ function App() {
     title: "",
   });
 
+  //changes state of items user types in the input field
   const [itemsFromInputField, setItemsFromInputField] = useState(null);
 
+  //changes state based on the meal type user selects
   const [mealFilters, setMealFilters] = useState(null);
 
+  //changes state based on the cooktime user selects
   const [timeFilters, setTimeFilters] = useState(null);
 
   return (
