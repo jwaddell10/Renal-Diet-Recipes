@@ -14,13 +14,9 @@ function App() {
 
   const [itemsFromInputField, setItemsFromInputField] = useState(null);
 
-  const [mealFilters, setMealFilters] = useState({
-    mealtime: "",
-  });
+  const [mealFilters, setMealFilters] = useState();
 
-  const [timeFilters, setTimeFilters] = useState({
-    cooktime: "",
-  });
+  const [timeFilters, setTimeFilters] = useState(null);
 
   return (
     <div>

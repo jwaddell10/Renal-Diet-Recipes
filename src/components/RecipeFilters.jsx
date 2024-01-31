@@ -27,9 +27,9 @@ function RecipeFilters({ setMealFilters, setTimeFilters }) {
         name="cooktime"
         id="cooktime"
       >
-        <option value="short">0-10 Minutes</option>
-        <option value="medium">10-20 Minutes</option>
-        <option value="long">20+ Minutes</option>
+        <option value="1-10">0-10 Minutes</option>
+        <option value="11-20">10-20 Minutes</option>
+        <option value="21-40">20+ Minutes</option>
       </select>
     </div>
   );
