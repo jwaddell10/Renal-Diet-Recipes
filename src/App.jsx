@@ -14,7 +14,7 @@ function App() {
 
   const [itemsFromInputField, setItemsFromInputField] = useState(null);
 
-  const [mealFilters, setMealFilters] = useState();
+  const [mealFilters, setMealFilters] = useState(null);
 
   const [timeFilters, setTimeFilters] = useState(null);
 

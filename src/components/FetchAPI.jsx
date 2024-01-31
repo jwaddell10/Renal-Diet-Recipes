@@ -11,8 +11,8 @@ const useFetchAPI = ({ formData, mealFilters, timeFilters }) => {
   const getData = async () => {
     try {
       const searchQuery = formData.title;
-      const mealTypeFilters = mealFilters.mealFilters
-      const cookTimeFilters = timeFilters.timeFilters
+      const mealTypeFilters = mealFilters.mealFilters;
+      const cookTimeFilters = timeFilters.timeFilters;
 
       const response = await fetch(
         `https://api.edamam.com/api/recipes/v2?type=public&q=${searchQuery}&app_id=${APP_ID}&app_key=${APP_key}&health=kidney-friendly&mealType=${mealTypeFilters}&time=${cookTimeFilters}
