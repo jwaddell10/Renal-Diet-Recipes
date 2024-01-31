@@ -8,11 +8,16 @@ const useFetchAPI = ({ formData }) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const getData = async () => {
+  const getData = async (mealFilters, timeFilters) => {
+
     try {
       const searchQuery = formData.title;
+      const short = '1-10'
+      console.log(timeFilters, 'this is timefilters')
+
       const response = await fetch(
-        `https://api.edamam.com/api/recipes/v2?type=public&q=${searchQuery}&app_id=${APP_ID}&app_key=${APP_key}`,
+        `https://api.edamam.com/api/recipes/v2?type=public&q=${searchQuery}&app_id=${APP_ID}&app_key=${APP_key}&health=kidney-friendly&mealType=Breakfast&time=${short}
+`,
         {
           mode: "cors",
         }
