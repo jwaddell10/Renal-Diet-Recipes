@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Title from "./components/Title.jsx";
-import InputField from "./components/InputField.jsx";
-import RecipeFilters from "./components/RecipeFilters.jsx";
-import Body from "./components/Body.jsx";
+import Title from "./components/Title/Title.jsx";
+import InputField from "./components/InputField/InputField.jsx";
+import RecipeFilters from "./components/RecipeFilter/RecipeFilters.jsx";
+import Body from "./components/Body/Body.jsx";
 //homepage, title page
 //input field, filters
 //body with cards

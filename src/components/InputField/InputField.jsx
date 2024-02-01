@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import useFetchAPI from "./FetchAPI.jsx";
+import useFetchAPI from "../FetchAPI/FetchAPI.jsx";
 import { useEffect } from "react";
 
 const InputField = ({
