@@ -22,7 +22,7 @@ function Body({ itemsFromInputField }) {
             <li key={item.recipe.uri}>
               <ul>
                 {item.recipe.label}
-                {item.recipe.calories}
+                {Math.floor(item.recipe.calories)}
               </ul>
               {item.recipe.ingredientLines.map((ingredient, index) => (
                 <li key={index}>{ingredient}</li>
