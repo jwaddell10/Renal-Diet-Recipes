@@ -9,6 +9,8 @@ const useFetchAPI = ({ formData, mealFilters, timeFilters }) => {
   const [loading, setLoading] = useState(true);
 
   const getData = async () => {
+    console.log(mealFilters, 'this is mealfilters in fetch')
+    console.log(timeFilters, 'this is timefilters in fetch')
     try {
       const searchQuery = formData.title;
       const mealTypeFilters = mealFilters.mealFilters;

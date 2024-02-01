@@ -2,15 +2,13 @@ import PropTypes from "prop-types";
 
 function RecipeFilters({ setMealFilters, setTimeFilters }) {
   const handleMealFilterChange = (e) => {
-    setMealFilters((prevData) => ({
-      ...prevData,
+    setMealFilters(() => ({
       mealFilters: e.target.value,
     }));
   };
 
   const handleTimeFilterChange = (e) => {
-    setTimeFilters((prevData) => ({
-      ...prevData,
+    setTimeFilters(() => ({
       timeFilters: e.target.value,
     }));
   };

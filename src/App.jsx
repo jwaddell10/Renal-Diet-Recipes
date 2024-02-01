@@ -16,10 +16,14 @@ function App() {
   const [itemsFromInputField, setItemsFromInputField] = useState(null);
 
   //changes state based on the meal type user selects
-  const [mealFilters, setMealFilters] = useState(null);
+  const [mealFilters, setMealFilters] = useState({
+    mealFilters: 'Breakfast'
+  });
 
   //changes state based on the cooktime user selects
-  const [timeFilters, setTimeFilters] = useState(null);
+  const [timeFilters, setTimeFilters] = useState({
+    timeFilters: '1-10'
+  });
 
   return (
     <div>
