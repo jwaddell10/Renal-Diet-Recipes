@@ -38,7 +38,6 @@ const useFetchAPI = ({ formData, mealFilters, timeFilters }) => {
     }
   };
 
-console.log(items, 'this is items')
   return { items, error, loading, getData };
 };
 

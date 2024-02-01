@@ -7,6 +7,10 @@ function Body({ itemsFromInputField }) {
     console.log(recipes, "this is recipes");
   }
 
+  function urlRedirect(url) {
+    window.open(url);
+  }
+
   return (
     itemsFromInputField && (
       <ul>
@@ -15,6 +19,9 @@ function Body({ itemsFromInputField }) {
             <li key={item.recipe.uri}>
               {item.recipe.label}
               <img src={item.recipe.image} />
+              <button onClick={() => urlRedirect(item.recipe.url)}>
+                Recipe
+              </button>
             </li>
           ))}
       </ul>

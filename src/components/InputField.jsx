@@ -9,7 +9,6 @@ const InputField = ({
   mealFilters,
   timeFilters,
 }) => {
-  
   const { getData, items } = useFetchAPI({
     formData,
     mealFilters,
@@ -28,7 +27,6 @@ const InputField = ({
     getData();
     // setFormData((prevData) => ({ ...prevData, title: e.target.value }));
   };
-
 
   useEffect(() => {
     if (items !== null) {

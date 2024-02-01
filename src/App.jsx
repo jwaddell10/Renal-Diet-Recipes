@@ -14,15 +14,14 @@ function App() {
 
   //changes state of items user types in the input field
   const [itemsFromInputField, setItemsFromInputField] = useState(null);
-
   //changes state based on the meal type user selects
   const [mealFilters, setMealFilters] = useState({
-    mealFilters: 'Breakfast'
+    mealFilters: "Breakfast",
   });
 
   //changes state based on the cooktime user selects
   const [timeFilters, setTimeFilters] = useState({
-    timeFilters: '1-10'
+    timeFilters: "1-10",
   });
 
   return (
