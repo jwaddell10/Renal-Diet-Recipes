@@ -3,6 +3,8 @@ import Title from "./components/Title/Title.jsx";
 import InputField from "./components/InputField/InputField.jsx";
 import RecipeFilters from "./components/RecipeFilter/RecipeFilters.jsx";
 import Body from "./components/Body/Body.jsx";
+import styled from "styled-components";
+
 //homepage, title page
 //input field, filters
 //body with cards
@@ -27,21 +29,24 @@ function App() {
   return (
     <div>
       <Title />
-      <InputField
-        formData={formData}
-        setFormData={setFormData}
-        setItemsFromInputField={setItemsFromInputField}
-        mealFilters={mealFilters}
-        // setMealFilters={setMealFilters}
-        timeFilters={timeFilters}
-        // setTimeFilters={setTimeFilters}
-      />
-      <RecipeFilters
-        mealFilters={mealFilters}
-        setMealFilters={setMealFilters}
-        timeFilters={timeFilters}
-        setTimeFilters={setTimeFilters}
-      />
+      <StyledBar>
+        <InputField
+          formData={formData}
+          setFormData={setFormData}
+          setItemsFromInputField={setItemsFromInputField}
+          mealFilters={mealFilters}
+          // setMealFilters={setMealFilters}
+          timeFilters={timeFilters}
+          // setTimeFilters={setTimeFilters}
+        />
+        <RecipeFilters
+          mealFilters={mealFilters}
+          setMealFilters={setMealFilters}
+          timeFilters={timeFilters}
+          setTimeFilters={setTimeFilters}
+        />
+      </StyledBar>
+
       <Body
         formData={formData}
         setFormData={setFormData}
@@ -50,5 +55,10 @@ function App() {
     </div>
   );
 }
+
+const StyledBar = styled.section`
+  display: flex;
+  justify-content: center;
+`;
 
 export default App;
