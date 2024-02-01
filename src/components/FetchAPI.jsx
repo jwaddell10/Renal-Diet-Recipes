@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const APP_ID = "07219864";
 const APP_key = "f83320eb349bdebfd72d4be76b29e58f";
@@ -9,8 +9,6 @@ const useFetchAPI = ({ formData, mealFilters, timeFilters }) => {
   const [loading, setLoading] = useState(true);
 
   const getData = async () => {
-    console.log(mealFilters, 'this is mealfilters in fetch')
-    console.log(timeFilters, 'this is timefilters in fetch')
     try {
       const searchQuery = formData.title;
       const mealTypeFilters = mealFilters.mealFilters;
@@ -23,7 +21,6 @@ const useFetchAPI = ({ formData, mealFilters, timeFilters }) => {
           mode: "cors",
         }
       );
-
       if (!response.ok) {
         throw new Error(
           `This is an HTTP error: The status is ${response.status}`
@@ -41,6 +38,7 @@ const useFetchAPI = ({ formData, mealFilters, timeFilters }) => {
     }
   };
 
+console.log(items, 'this is items')
   return { items, error, loading, getData };
 };
 
