@@ -1,11 +1,14 @@
 import PropTypes from "prop-types";
 function Body({ itemsFromInputField }) {
   let recipes = null;
+  let recipeIngredients = null;
+  console.log(recipeIngredients, "this is recipe ingredients");
 
   if (itemsFromInputField) {
     recipes = itemsFromInputField.hits;
-    console.log(recipes, "this is recipes");
   }
+
+  //loop over each recipe
 
   function urlRedirect(url) {
     window.open(url);
@@ -17,7 +20,13 @@ function Body({ itemsFromInputField }) {
         {recipes &&
           recipes.map((item) => (
             <li key={item.recipe.uri}>
-              {item.recipe.label}
+              <ul>
+                {item.recipe.label}
+                {item.recipe.calories}
+              </ul>
+              {item.recipe.ingredientLines.map((ingredient, index) => (
+                <li key={index}>{ingredient}</li>
+              ))}
               <img src={item.recipe.image} />
               <button onClick={() => urlRedirect(item.recipe.url)}>
                 Recipe
