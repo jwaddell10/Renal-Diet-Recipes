@@ -38,13 +38,14 @@ const InputField = ({
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Title</label>
+        <label htmlFor="title"></label>
         <input
           onChange={handleChange}
           value={formData.title}
           type="text"
           name="title"
           id="title"
+          placeholder="Search"
         />
         <button type="submit">Submit</button>
       </form>
