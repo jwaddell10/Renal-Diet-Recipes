@@ -3,21 +3,21 @@
 }
 
 .button {
-    padding: 10px 20px; /* Adjust padding using pixel values */
+    padding: 1.5vw 3vw; /* Adjust padding using viewport width units */
     border: unset;
-    border-radius: 10px; /* Adjust border-radius using pixel values */
+    border-radius: 1.5vw; /* Adjust border-radius using viewport width units */
     color: #212121;
     z-index: 1;
     background: #e8e8e8;
     position: relative;
     font-weight: 1000;
-    font-size: 14px; /* Adjust font-size using pixel values */
-    -webkit-box-shadow: 2px 4px 8px -1px rgba(0, 0, 0, 0.27);
-    box-shadow: 2px 4px 8px -1px rgba(0, 0, 0, 0.27);
+    font-size: 1.5vw; /* Adjust font-size using viewport width units */
+    -webkit-box-shadow: 0.3vw 0.6vw 1.5vw -0.2vw rgba(0, 0, 0, 0.27); /* Adjust box-shadow using viewport width units */
+    box-shadow: 0.3vw 0.6vw 1.5vw -0.2vw rgba(0, 0, 0, 0.27); /* Adjust box-shadow using viewport width units */
     transition: all 250ms;
     overflow: hidden;
   }
-   
+  
   .button::before {
     content: "";
     position: absolute;
@@ -25,21 +25,35 @@
     left: 0;
     height: 100%;
     width: 0;
-    border-radius: 10px; /* Adjust border-radius using pixel values */
+    border-radius: 1.5vw; /* Adjust border-radius using viewport width units */
     background-color: #212121;
     z-index: -1;
-    -webkit-box-shadow: 2px 4px 8px -1px rgba(0, 0, 0, 0.27);
-    box-shadow: 2px 4px 8px -1px rgba(0, 0, 0, 0.27);
+    -webkit-box-shadow: 0.3vw 0.6vw 1.5vw -0.2vw rgba(0, 0, 0, 0.27); /* Adjust box-shadow using viewport width units */
+    box-shadow: 0.3vw 0.6vw 1.5vw -0.2vw rgba(0, 0, 0, 0.27); /* Adjust box-shadow using viewport width units */
     transition: all 250ms;
   }
-   
-   .button:hover {
+  
+  .button:hover {
     color: #e8e8e8;
-   }
-   
-   .button:hover::before {
+  }
+  
+  .button:hover::before {
     width: 100%;
-   }
+  }
+  
+  @media (max-width: 768px) {
+    .button {
+      padding: 2vw 4vw; /* Adjust padding for smaller screens */
+      border-radius: 1.5vw; /* Adjust border-radius for smaller screens */
+      font-size: 2vw; /* Adjust font-size for smaller screens */
+      -webkit-box-shadow: 0.5vw 1vw 2vw -0.3vw rgba(0, 0, 0, 0.27); /* Adjust box-shadow for smaller screens */
+      box-shadow: 0.5vw 1vw 2vw -0.3vw rgba(0, 0, 0, 0.27); /* Adjust box-shadow for smaller screens */
+    }
+  
+    .button::before {
+      border-radius: 1.5vw; /* Adjust border-radius for smaller screens */
+    }
+  }
 
    .img {
     max-width: 80%; /* Ensure the image doesn't exceed the width of its container */
