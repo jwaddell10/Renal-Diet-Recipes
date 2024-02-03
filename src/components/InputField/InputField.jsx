@@ -47,7 +47,6 @@ const InputField = ({
           id="title"
           placeholder="Search"
         />
-        <button type="submit">Submit</button>
       </form>
     </div>
   );
