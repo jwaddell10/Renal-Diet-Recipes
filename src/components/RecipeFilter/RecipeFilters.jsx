@@ -1,6 +1,23 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
+const DropdownContainer = styled.div`
+  display: flex;
+  align-items: stretch; /* Ensures equal height for children */
+  margin-bottom: 20px;
+
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0.2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+  }
+`;
+
 function RecipeFilters({ setMealFilters, setTimeFilters }) {
   const handleMealFilterChange = (e) => {
     setMealFilters(() => ({
@@ -13,8 +30,9 @@ function RecipeFilters({ setMealFilters, setTimeFilters }) {
       timeFilters: e.target.value,
     }));
   };
+
   return (
-    <div>
+    <DropdownContainer>
       <select onChange={handleMealFilterChange} name="mealtime" id="mealtime">
         <option value="breakfast">Breakfast</option>
         <option value="lunch">Lunch</option>
@@ -26,9 +44,11 @@ function RecipeFilters({ setMealFilters, setTimeFilters }) {
         <option value="11-20">10-20 Minutes</option>
         <option value="21-40">20+ Minutes</option>
       </select>
-    </div>
+    </DropdownContainer>
   );
 }
+
+
 
 RecipeFilters.propTypes = {
   setMealFilters: PropTypes.func,
