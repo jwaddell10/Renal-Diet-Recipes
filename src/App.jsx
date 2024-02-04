@@ -5,10 +5,6 @@ import RecipeFilters from "./components/RecipeFilter/RecipeFilters.jsx";
 import Body from "./components/Body/Body.jsx";
 import styled from "styled-components";
 
-//homepage, title page
-//input field, filters
-//body with cards
-
 function App() {
   const [formData, setFormData] = useState({
     title: "",
@@ -35,9 +31,7 @@ function App() {
           setFormData={setFormData}
           setItemsFromInputField={setItemsFromInputField}
           mealFilters={mealFilters}
-          // setMealFilters={setMealFilters}
           timeFilters={timeFilters}
-          // setTimeFilters={setTimeFilters}
         />
         <RecipeFilters
           mealFilters={mealFilters}

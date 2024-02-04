@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import useFetchAPI from "../FetchAPI/FetchAPI.jsx";
 import { useEffect } from "react";
-import styled from "styled-components";
 
 const InputField = ({
   formData,
@@ -26,7 +25,6 @@ const InputField = ({
       return;
     }
     getData();
-    // setFormData((prevData) => ({ ...prevData, title: e.target.value }));
   };
 
   useEffect(() => {

@@ -29,23 +29,7 @@ function Body({ itemsFromInputField }) {
                         <StyledText>
                           <h1 onClick={() => urlRedirect(item.recipe.url)}>{item.recipe.label}</h1>
                         </StyledText>
-
-                        {/* <li>
-                          <b>Calories:</b> {Math.floor(item.recipe.calories)}
-                        </li>
-                        <b>Ingredients:</b>
-                        {item.recipe.ingredientLines.map(
-                          (ingredient, index) => (
-                            <li key={index}>{ingredient}</li>
-                          )
-                        )} */}
                       </div>
-                      {/* <button
-                        className={styles.button}
-                        onClick={() => urlRedirect(item.recipe.url)}
-                      >
-                        View Recipe
-                      </button> */}
                     </div>
                   </StyledCard>
                 </div>

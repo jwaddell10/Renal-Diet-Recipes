@@ -10,7 +10,7 @@ function Title() {
 
 const StyledText = styled.section`
   text-align: center;
-  font-family: 'FF Nexus Serif', sans-serif;
+  font-family: "FF Nexus Serif", sans-serif;
 `;
 
 export default Title;
