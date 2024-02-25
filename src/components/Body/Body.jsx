@@ -21,7 +21,6 @@ function Body({ itemsFromInputField }) {
             recipes.map((item) => (
               <StyledDiv key={item.recipe.uri}>
                 <img className={styles.img} src={item.recipe.image} />
-
                 <div className={styles.li}>
                   <StyledCard>
                     <div>
@@ -62,7 +61,6 @@ const StyledText = styled.section`
 &:hover {
   text-decoration: underline;
   cursor: pointer;
-
 }
 font-family: 'FF Nexus Serif', sans-serif;
 font-size: 1.5rem;
